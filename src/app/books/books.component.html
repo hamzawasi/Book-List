@@ -1,0 +1,9 @@
+<ul class="books">
+  <li *ngFor="let book of books | paginate: { itemsPerPage: 5, currentPage: p } | orderBy: order">
+    <a routerLink="/detail/{{book.id}}">
+      <span class="badge">{{book.id}}</span> {{book.name}}
+    </a>
+  </li>
+</ul>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
